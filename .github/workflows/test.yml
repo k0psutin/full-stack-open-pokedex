@@ -12,5 +12,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: contains false check
         env:
-          SKIP_DEPLOY: contains(join(github.event.commits.*.message, ''), '#skip')
+          SKIP_DEPLOY: |
+           github.event_name == 'push' 
+            && !contains(join(github.event.commits.*.message, ''))
         run: echo "Skip deploy? $SKIP_DEPLOY"
