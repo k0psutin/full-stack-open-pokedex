@@ -12,5 +12,5 @@ jobs:
       - uses: actions/checkout@v2
       - name: commit messages
         env:
-          SKIP_DEPLOY: ${{ contains(github.event.commits.*.message, '#skip') }}
+          SKIP_DEPLOY: ${{ contains(join(github.event.commits.*.message, ''), '#skip') }}
         run: echo "Skip deploy? $SKIP_DEPLOY"
