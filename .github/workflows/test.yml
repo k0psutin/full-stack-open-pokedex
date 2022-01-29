@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-      - name: commit messages
+      - name: contains false check
         env:
-          SKIP_DEPLOY: ${{ contains(join(github.event.commits.*.message, ''), '#skip') }}
+          SKIP_DEPLOY: contains(join(github.event.commits.*.message, ''), '#skip')
         run: echo "Skip deploy? $SKIP_DEPLOY"
