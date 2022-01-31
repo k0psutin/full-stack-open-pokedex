@@ -18,10 +18,10 @@ jobs:
             Repository: ${{ github.repository }}
             
             See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
-      - name: send telegram message to user
+      - name: send telegram message on push
         uses: appleboy/telegram-action@master
         with:
-          to: ${{ secrets.TELERGAM_TO_ME }}
+          to: ${{ secrets.TELEGRAM_TO_ME }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             ${{ github.actor }} created commit:
