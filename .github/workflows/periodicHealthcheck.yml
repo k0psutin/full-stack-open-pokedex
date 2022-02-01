@@ -1,0 +1,10 @@
+name: Periodic healthcheck
+
+on: [push]
+jobs:
+
+  build:
+  - name: Check the deployed service health
+    uses: jtalk/url-health-check-action@v2
+    with:
+     url: https://${{ secrets.HEROKU_APP_NAME }}.herokuapp.com/health
