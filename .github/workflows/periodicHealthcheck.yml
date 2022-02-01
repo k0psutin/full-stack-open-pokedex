@@ -1,7 +1,5 @@
 name: periodic healthcheck
-on:
-  schedule:
-    - cron: '16 * * * *'
+on: [push]
 
 jobs:
   build:
