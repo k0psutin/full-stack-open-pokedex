@@ -1,8 +1,8 @@
 name: periodic healthcheck
 on:
   schedule:
-    - cron: '10 * * * *'
-    
+    - cron: '16 * * * *'
+
 jobs:
   build:
     name: Build
